@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.2/handlebars.min.js"></script>
+        <script>
+
+        //var callURL = "directory.php?q=collette";
+
+        var callURL = "http://topaz.binghamton.edu/mobile14/index.php/directory/listRecords?q=collette";
+        var jqxhr = $.get(callURL)
+            .done(function(data) {
+                $('#content').html(data);
+        });
+/*
+        var jqxhr = $.getJSON(callURL)
+        .done(function(data) {
+            //alert( "success" );
+            //var employees = JSON.parse(data["rows"]);
+            var items = [];
+            console.log(data["rows"]);
+    
+            $.each( data["rows"], function( index ) {
+                console.log(index);
+                items.push( "<li>" + data["rows"][index]["FirstName"] + "</li>" );
+            });
+    
+            $.each( data["rows"], function(index,value) {
+                items.push( "<li>" + value["FirstName"]  + " " + value["LastName"] + "</li>" );
+            });
+    
+            $( "<ul/>", {
+                "class": "my-new-list",
+                html: items.join( "" )
+            }).appendTo( "body" );
+        })
+        .fail(function() {
+            alert( "error" );
+        })
+        .always(function() {
+            //alert( "complete" );
+        });
+     */
+        </script>
+    </head>
+    <body>
+        <div id="content">TODO write content</div>
+    </body>
+</html>
